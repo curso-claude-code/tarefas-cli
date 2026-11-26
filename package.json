@@ -1,6 +1,6 @@
 {
   "name": "tarefas-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lista de tarefas no terminal. Projeto-guia do curso.",
   "type": "module",
   "bin": {
