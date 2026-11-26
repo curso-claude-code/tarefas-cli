@@ -34,3 +34,7 @@ test('listar mostra o estado de cada tarefa', () => {
   assert.equal(listar(lista, { pendentes: true }), '[ ] 2  b');
   assert.equal(listar([]), 'Nenhuma tarefa.');
 });
+
+test('adicionar recusa título com mais de 80 caracteres', () => {
+  assert.throws(() => adicionar([], 'x'.repeat(81)), /até 80 caracteres/);
+});
