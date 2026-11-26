@@ -1,13 +1,17 @@
 {
   "name": "tarefas-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lista de tarefas no terminal. Projeto-guia do curso.",
   "type": "module",
-  "bin": { "tarefas": "bin/tarefas.js" },
+  "bin": {
+    "tarefas": "bin/tarefas.js"
+  },
   "scripts": {
     "test": "node --test",
     "test:um": "node --test --test-name-pattern"
   },
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "license": "MIT"
 }
