@@ -3,6 +3,7 @@
 export function adicionar(tarefas, titulo) {
   const texto = String(titulo ?? '').trim();
   if (!texto) throw new Error('A tarefa precisa de um título.');
+  if (texto.length > 80) throw new Error('O título pode ter até 80 caracteres.');
   const id = tarefas.reduce((maior, t) => Math.max(maior, t.id), 0) + 1;
   return [...tarefas, { id, titulo: texto, feita: false }];
 }
