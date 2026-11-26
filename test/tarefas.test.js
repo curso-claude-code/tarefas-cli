@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { adicionar, concluir, remover, listar } from '../src/tarefas.js';
+import { adicionar, concluir, remover, limparFeitas, listar } from '../src/tarefas.js';
 
 test('adicionar cria a tarefa com o próximo id', () => {
   const lista = adicionar(adicionar([], 'comprar café'), 'estudar mise');
@@ -37,4 +37,9 @@ test('listar mostra o estado de cada tarefa', () => {
 
 test('adicionar recusa título com mais de 80 caracteres', () => {
   assert.throws(() => adicionar([], 'x'.repeat(81)), /até 80 caracteres/);
+});
+
+test('clear apaga só as tarefas feitas', () => {
+  const lista = concluir(adicionar(adicionar([], 'a'), 'b'), 1);
+  assert.deepEqual(limparFeitas(lista).map((t) => t.titulo), ['b']);
 });

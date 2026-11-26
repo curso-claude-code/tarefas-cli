@@ -18,6 +18,10 @@ export function remover(tarefas, id) {
   return tarefas.filter((t) => t.id !== id);
 }
 
+export function limparFeitas(tarefas) {
+  return tarefas.filter((t) => !t.feita);
+}
+
 export function listar(tarefas, { pendentes = false } = {}) {
   const lista = pendentes ? tarefas.filter((t) => !t.feita) : tarefas;
   if (lista.length === 0) return 'Nenhuma tarefa.';
